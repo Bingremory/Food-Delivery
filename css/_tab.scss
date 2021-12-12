@@ -1,0 +1,136 @@
+.tab {
+  position: relative;
+  h2.tab-title {
+    margin: 0 auto 45px;
+    max-width: 577px;
+    line-height: 72px;
+  }
+}
+
+.filters {
+  margin-bottom: 40px;
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 2px solid #eaeaea;
+    cursor: pointer;
+    color: $text;
+    &.active {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.products {
+  .swiper-wrapper {
+    padding: 0 10px 10px;
+  }
+  .card {
+    position: relative;
+    padding: 10px 10px 20px;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    flex-direction: column;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1%;
+      left: -1.5%;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border-radius: 10px;
+      background: linear-gradient(to bottom, transparent 50%, #f3f3f3);
+      z-index: -1;
+    }
+    &:hover::before {
+      background: linear-gradient(to bottom, transparent 50%, #ffcf03);
+    }
+
+    .image {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 15px;
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .rating {
+      span {
+        color: $yellow;
+        font-size: 20px;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      margin-bottom: 20px;
+      .color {
+        color: $primary-color;
+        font-weight: 600;
+        margin-left: 5px;
+      }
+    }
+
+    a.btn {
+      padding: 12px 17px;
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+  .swiper-pagination-bullet {
+    background-color: $primary-color;
+    width: 10px;
+    height: 10px;
+  }
+  .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 15px;
+    background-color: $primary-color;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h2.tab-title {
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .filters span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .filters {
+    flex-wrap: wrap;
+    span {
+      margin: 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .tab {
+    h2.tab-title {
+      font-size: 23px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+  }
+  .filters span {
+    margin: 10px 0;
+  }
+}

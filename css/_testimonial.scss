@@ -1,0 +1,239 @@
+.testimonials {
+  padding: 10rem 0 10rem;
+  background-color: $bg-gray;
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 100px;
+    align-items: flex-start;
+
+    .card {
+      border-right: 2px solid #eaeaea;
+      padding-bottom: 10px;
+      &.active {
+        border-color: $primary-color;
+
+        .d-flex {
+          background-color: #fff;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+      }
+
+      .d-flex {
+        border-radius: 10px;
+        width: 85%;
+        padding: 15px;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+      }
+
+      .image {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 30px;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      h4 {
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+
+      span {
+        font-size: 16px;
+        color: $text;
+      }
+    }
+
+    .col:last-child {
+      position: relative;
+      overflow: hidden;
+      height: 440px;
+
+      h2 {
+        font-size: 45px;
+        margin-bottom: 30px;
+
+        span {
+          color: $primary-color;
+        }
+      }
+
+      .testimonial {
+        position: absolute;
+        bottom: -100%;
+        transform: translateY(-30%);
+        transition: 0.5s;
+
+        &.active {
+          bottom: -5%;
+        }
+
+        .d-flex {
+          justify-content: space-between;
+          border-bottom: 1px solid #eaeaea;
+          padding-bottom: 15px;
+          margin-bottom: 30px;
+
+          div {
+            &:first-child {
+              border-left: 2px solid $primary-color;
+              padding-left: 10px;
+
+              h4 {
+                font-size: 28px;
+              }
+
+              span {
+                font-size: 16px;
+                color: $text;
+              }
+            }
+          }
+
+          .rating {
+            span {
+              color: $yellow-star;
+            }
+          }
+        }
+        p {
+          color: $text;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .testimonials {
+    .row {
+      gap: 50px 0;
+
+      .col:last-child {
+        h2 {
+          font-size: 35px;
+        }
+
+        .testimonial {
+          bottom: -90%;
+          transform: translateY(-10%);
+        }
+      }
+
+      .card {
+        border: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .testimonials {
+    .row {
+      .col:last-child {
+        padding: 20px;
+        h2 {
+          font-size: 28px;
+        }
+        .testimonial {
+          transform: translateY(-10%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 567px) {
+  .testimonials {
+    .row {
+      display: flex;
+      .col:first-child {
+        padding: 0 15px;
+        width: 100%;
+      }
+      .card {
+        .d-flex {
+          width: 100%;
+          h4 {
+            font-size: 20px;
+          }
+        }
+      }
+      .col:last-child {
+        .testimonial.active {
+          transform: translateY(0);
+        }
+        .testimonial {
+          transform: translateY(0);
+          .d-flex > div:first-child {
+            h4 {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .testimonials {
+    .row {
+      display: flex;
+      gap: 20px 0;
+      .col:first-child {
+        padding: 0 15px;
+        width: 100%;
+      }
+      .card {
+        .d-flex {
+          width: 100%;
+          h4 {
+            font-size: 15px;
+          }
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+      .col:last-child {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 0;
+        }
+        .testimonial.active {
+          bottom: -5%;
+        }
+        .testimonial {
+          transform: translateY(-30%);
+          p {
+            font-size: 15px;
+          }
+          .d-flex {
+            margin-bottom: 10px;
+          }
+          .d-flex > div:first-child {
+            span {
+              font-size: 13px;
+            }
+            h4 {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
